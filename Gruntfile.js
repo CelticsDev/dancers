@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['src/js/*.js'],
-        tasks: ['import','notify:done', 'uglify']
+        tasks: ['import','notify:done','eslint']
       },
       css: {
         files: ['src/scss/*.scss',
@@ -30,12 +30,12 @@ module.exports = function(grunt) {
     htmlmin: {
        dist: {
          options: {
-           gruntLogHeader: false,
            removeComments: true,
-           collapseWhitespace: true
+           collapseWhitespace: true,
+           gruntLogHeader: false,
          },
          files: {
-           'src/html/min/template.min.html': 'src/html/template.html' // CHANGE TEMPLATE NAME
+           'src/html/min/_player-wrap.min.html': 'src/html/_player-wrap.html' // CHANGE TEMPLATE NAME
          }
        }
      },
@@ -79,14 +79,26 @@ module.exports = function(grunt) {
     },
 
     /*==============================
+    =            ESLINT            =
+    ==============================*/
+
+    eslint: {
+      options: {
+        configFile: 'src/js/eslint.json',
+      },
+      target: ['src/js/*.js']
+    },
+
+    /*==============================
     =            IMPORT            =
     ==============================*/
 
     import: {
-      options: {},
+      options: {
+        gruntLogHeader: false
+      },
       dist: {
         files: {
-          gruntLogHeader: false,
           'dist/js/dancers.js' : 'src/js/dancers.js',
           'dist/dancers.ready.html' : 'src/dancers.html'
         }
@@ -97,6 +109,15 @@ module.exports = function(grunt) {
     =            NOTIFY            =
     ==============================*/
 
+    notify_hooks: {
+      options: {
+        enabled: true,
+        max_jshint_notifications: 5,
+        title: "dancers",
+        success: false,
+        duration: 1,
+      }
+    },
     notify: {
       done: {
         options: {

@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <script>
 @import "../dist/js/dancers.js"
 </script>
@@ -6,19 +8,49 @@
 </style>
 <div class="row">
 	<div class="home input team col-xs-6">
-		<h2 class="BOS"> BOS</h2>
-		<div class="col-xs-12 select-wrap">
-			<div class="col-sm-5 col-xs-12">
-				<select class="team-list input-sm">
-					<option value="celtics">Boston Celtics</option>
-				</select>
+		<div class="col-xs-12">
+			<h2 class="BOS">DANCER BIO</h2>
+		</div>
+		<div class="col-xs-12"><h3 class="BOS">firstname</h3><textarea name="name" class="fn"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">hometown</h3><textarea name="hometown" class="hometown"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">nickname</h3><textarea name="nickname" class="nickname"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">occupation</h3><textarea name="occupation" class="occupation"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">tenure</h3><textarea name="tenure" class="tenure"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">color</h3><textarea name="color" class="color"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">tvshow</h3><textarea name="tvshow" class="tvshow"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">movie</h3><textarea name="movie" class="movie"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">app</h3><textarea name="app" class="app"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">food</h3><textarea name="food" class="food"></textarea></div>
+		<div class="col-xs-6"><h3 class="BOS">player</h3><textarea name="player" class="player"></textarea></div>
+		<div class="col-xs-12">
+			<h3 class="BOS">fun facts</h3>
+			<div class="funfacts col-xs-12">
+				<textarea class="q"></textarea>
+				<textarea class="a"></textarea>
+				<textarea class="q"></textarea>
+				<textarea class="a"></textarea>
+				<textarea class="q"></textarea>
+				<textarea class="a"></textarea>
+				<textarea class="q"></textarea>
+				<textarea class="a"></textarea>
+				<textarea class="q"></textarea>
+				<textarea class="a"></textarea>
 			</div>
-			<div class="col-sm-5 col-xs-12">
-				<select id="celtics-list" class="player-list input-sm">
-					<option value="none">-- Select a Player or Coach --</option>
-				</select>
-			</div>
-			<div class="col-xs-2"><textarea name="home-score" class="score">SCORE</textarea></div>
+		</div>
+		<div class="col-xs-12">
+			<button button-type="add" class="add btn btn-success">ADD +</button>
+			<button button-type="remove" class="remove btn btn-danger">REMOVE - </button>
 		</div>
 	</div>
+	<div class="col-xs-6">
+		<h2 class="BOS">OUTPUT</h2>
+		<div class="col-xs-12">
+			<button button-type="generate" class="generate btn btn-success">GENERATE CODE</button>
+			<button button-type="clear" class="clear btn btn-default">CLEAR</button>
+		</div>
+		<textarea class="output"></textarea>
+	</div>
+	<div class="col-xs-6">
+	</div>
+</div>
 </div>

@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: ['src/js/*.js'],
-        tasks: ['import','notify:done','eslint']
+        tasks: ['import','notify:done',]
       },
       css: {
         files: ['src/scss/*.scss',
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
            gruntLogHeader: false,
          },
          files: {
-           'src/html/min/_player-wrap.min.html': 'src/html/_player-wrap.html' // CHANGE TEMPLATE NAME
+           'src/html/min/_output.min.html': 'src/html/_output.html' // CHANGE TEMPLATE NAME
          }
        }
      },
@@ -61,7 +61,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'dist/css/dancers.min.css': 'src/scss/dancers.scss'
+          'dist/css/dancers.min.css': 'src/scss/dancers.scss',
+          'dist/css/dancer-bios.min.css': 'src/scss/dancer-bios.scss' //FOR CDN
         }
       }
     },

@@ -1,10 +1,10 @@
 info = {
 	fn : '',
+	stylist: '',
 	hometown : '',
 	nickname : '',
 	occupation : '',
 	tenure : '',
-	color : '',
 	tvshow : '',
 	movie : '',
 	app : '',
@@ -23,6 +23,9 @@ jQuery(document).ready(function() {
 				jQuery('.funfacts textarea:last-child, .funfacts textarea:nth-last-child(2)').remove();
 				break;
 			case 'generate':
+				for (var property in info){
+					info[property] = '';
+				}
 				for (var property in info) {
 					if (property !== 'funfacts'){
 						info[property] = jQuery('textarea.' + property).val();;
